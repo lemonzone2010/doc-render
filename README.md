@@ -44,9 +44,9 @@ Flying Saucer和iText介绍:
 
 5.由于生成pdf需要加载中文字体文件(一般字体文件>10M),本例中增加了资源池(最大资源数15),相关详细见ITextRendererObjectFactory.getObjectPool();经过简单测试能够支持:150个用户迭代10次
 
-6.  模板html:点击查看 overseaAssistance.html 
+6.  模板html:点击查看:http://git.oschina.net/lemonzone2010/doc-render/blob/master/doc-render/src/test/resources/config/templates/overseaAssistance.html
 
-7.  pdf生成文件点击查看 
+7.  pdf生成文件点击查看:http://git.oschina.net/lemonzone2010/doc-render/raw/master/doc-render/tmp/1385449366836.pdf
 
 8.基于maven构建,如果没有maven,需要手动下载以下依赖包:
 
@@ -77,5 +77,3 @@ slf4j-api-1.7.5.jar
 7.  pdf生成文件点击查看 
 
 项目主页:http://git.oschina.net/lemonzone2010/doc-render
-
- 
