@@ -1,4 +1,4 @@
-#doc-render
+项目主页:http://git.oschina.net/lemonzone2010/doc-render
 
 最近公司需要生成PDF,基于这个需求简单学习了下IText 和 flying saucer,对于这两个技术.我先简单介绍下:
 
@@ -17,6 +17,8 @@ Flying Saucer和iText介绍:
    C. FreeMarker是一个模版引擎，一个基于文本的模板输出工具（生成任意的HTML表单代码）。官网:http://freemarker.org/
 
 范例说明:
+
+项目主页:http://git.oschina.net/lemonzone2010/doc-render
 
 1.支持中文
 
@@ -42,7 +44,7 @@ Flying Saucer和iText介绍:
 
 5.由于生成pdf需要加载中文字体文件(一般字体文件>10M),本例中增加了资源池(最大资源数15),相关详细见ITextRendererObjectFactory.getObjectPool();经过简单测试能够支持:150个用户迭代10次
 
-6. 模板地址:点击查看 overseaAssistance.html 
+6. 模板html:点击查看 overseaAssistance.html 
 
 7. pdf生成文件点击查看 
 
@@ -69,3 +71,10 @@ junit-4.11.jar
 log4j-1.2.17.jar
 
 slf4j-api-1.7.5.jar
+
+
+
+
+项目主页:http://git.oschina.net/lemonzone2010/doc-render
+
+ 
