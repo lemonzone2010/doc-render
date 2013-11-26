@@ -42,7 +42,11 @@ Flying Saucer和iText介绍:
 
 5.由于生成pdf需要加载中文字体文件(一般字体文件>10M),本例中增加了资源池(最大资源数15),相关详细见ITextRendererObjectFactory.getObjectPool();经过简单测试能够支持:150个用户迭代10次
 
-6.基于maven构建,如果没有maven,需要手动下载以下依赖包:
+6. 模板地址:点击查看 overseaAssistance.html 
+
+7. pdf生成文件点击查看 
+
+8.基于maven构建,如果没有maven,需要手动下载以下依赖包:
 
 commons-pool-1.5.1.jar
 
@@ -65,7 +69,3 @@ junit-4.11.jar
 log4j-1.2.17.jar
 
 slf4j-api-1.7.5.jar
-
-
-
-
