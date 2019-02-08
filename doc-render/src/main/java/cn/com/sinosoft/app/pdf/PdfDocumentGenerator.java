@@ -20,11 +20,11 @@ import cn.com.sinosoft.app.pdf.exception.DocumentGeneratingException;
 import cn.com.sinosoft.app.pdf.factory.ITextRendererObjectFactory;
 
 /**
- * pdf Éú³É
- * 
+ * pdf ç”Ÿæˆ
+ *
  * @ClassName: PdfGenerator
- * @Description:pdf Éú³É
- * @author lihengjun ĞŞ¸ÄÊ±¼ä£º 2013Äê11ÔÂ5ÈÕ ÏÂÎç3:27:22 ĞŞ¸ÄÄÚÈİ£ºĞÂ½¨
+ * @Description:pdf ç”Ÿæˆ
+ * @author lihengjun ä¿®æ”¹æ—¶é—´ï¼š 2013å¹´11æœˆ5æ—¥ ä¸‹åˆ3:27:22 ä¿®æ”¹å†…å®¹ï¼šæ–°å»º
  */
 public class PdfDocumentGenerator {
 	private final static Logger logger = Logger.getLogger(PdfDocumentGenerator.class);
@@ -35,21 +35,21 @@ public class PdfDocumentGenerator {
 	}
 
 	/**
-	 * Ê¹ÓÃÄ£°å,Ä£°åÊı¾İ,Éú³Épdf
-	 * 
+	 * ä½¿ç”¨æ¨¡æ¿,æ¨¡æ¿æ•°æ®,ç”Ÿæˆpdf
+	 *
 	 * @Title: generate
-	 * @Description: Ê¹ÓÃÄ£°å,Ä£°åÊı¾İ,Éú³Épdf
+	 * @Description: ä½¿ç”¨æ¨¡æ¿,æ¨¡æ¿æ•°æ®,ç”Ÿæˆpdf
 	 * @param template
-	 *            classpathÖĞÂ·¾¶Ä£°åÂ·¾¶
+	 *            classpathä¸­è·¯å¾„æ¨¡æ¿è·¯å¾„
 	 * @param documentVo
-	 *            Ä£°åÊı¾İ
+	 *            æ¨¡æ¿æ•°æ®
 	 * @param outputFile
-	 *            Éú³ÉpdfµÄÂ·¾¶
-	 * @author lihengjun ĞŞ¸ÄÊ±¼ä£º 2013Äê11ÔÂ5ÈÕ ÏÂÎç1:38:53 ĞŞ¸ÄÄÚÈİ£ºĞÂ½¨
+	 *            ç”Ÿæˆpdfçš„è·¯å¾„
+	 * @author lihengjun ä¿®æ”¹æ—¶é—´ï¼š 2013å¹´11æœˆ5æ—¥ ä¸‹åˆ1:38:53 ä¿®æ”¹å†…å®¹ï¼šæ–°å»º
 	 * @throws DocumentGeneratingException
 	 */
 	public boolean generate(String template, DocumentVo documentVo,
-			String outputFile) throws DocumentGeneratingException {
+							String outputFile) throws DocumentGeneratingException {
 		Map<String, Object> variables = new HashMap<String, Object>();
 
 		try {
@@ -74,11 +74,11 @@ public class PdfDocumentGenerator {
 
 	/**
 	 * Output a pdf to the specified outputstream
-	 * 
+	 *
 	 * @param htmlContent
 	 *            the htmlstr
-	 * @param out
-	 *            the specified outputstream
+	 * @param outputFile
+	 *            the specified output file
 	 * @throws Exception
 	 */
 	public void generate(String htmlContent, String outputFile)
@@ -90,7 +90,7 @@ public class PdfDocumentGenerator {
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance()
 					.newDocumentBuilder();
 			Document doc = builder.parse(new ByteArrayInputStream(htmlContent
-					.getBytes("UTF-8")));
+					.getBytes("utf-8")));
 			File f = new File(outputFile);
 			if (f != null && !f.getParentFile().exists()) {
 				f.getParentFile().mkdir();
@@ -98,7 +98,7 @@ public class PdfDocumentGenerator {
 			out = new FileOutputStream(outputFile);
 
 			iTextRenderer = (ITextRenderer) ITextRendererObjectFactory
-					.getObjectPool().borrowObject();//»ñÈ¡¶ÔÏó³ØÖĞ¶ÔÏó
+					.getObjectPool().borrowObject();//è·å–å¯¹è±¡æ± ä¸­å¯¹è±¡
 
 			try {
 				iTextRenderer.setDocument(doc, null);

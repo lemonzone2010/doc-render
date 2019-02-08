@@ -8,34 +8,34 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * ¶ÁÈ¡ÏµÍ³µÄÅäÖÃ
+ * è¯»å–ç³»ç»Ÿçš„é…ç½®
  * <h3>Configuration.java</h3>
  * <h4>Description</h4>
  * @ver 0.1
- * @author Àîºã¾ü
- * 2011-8-2 ÏÂÎç02:14:40
+ * @author ææ’å†›
+ * 2011-8-2 ä¸‹åˆ02:14:40
  */
 public class  ReadConfig{
 	private static final Logger logger = LoggerFactory.getLogger(ReadConfig.class);
-	
+
 	private static Properties config = null;
 	private Properties pro = null;
 	static {
 		if(config==null)
 			config = init("config/config.properties");
-    }
-	
+	}
+
 	public ReadConfig(){}
 	public ReadConfig(String filePath){
 		pro = init(filePath);
 	}
-	
-	
+
+
 	/**
-	 * ·½·¨Ãû³Æ: init<br>
-	 * ÃèÊö£º³õÊ¼ ÅäÖÃÎÄ¼ş
-	 * ×÷Õß: partrick
-	 * ĞŞ¸ÄÈÕÆÚ£º2013-2-28ÏÂÎç02:41:40
+	 * æ–¹æ³•åç§°: init<br>
+	 * æè¿°ï¼šåˆå§‹ é…ç½®æ–‡ä»¶
+	 * ä½œè€…: partrick
+	 * ä¿®æ”¹æ—¥æœŸï¼š2013-2-28ä¸‹åˆ02:41:40
 	 * @param filePath
 	 * @return
 	 */
@@ -47,10 +47,10 @@ public class  ReadConfig{
 
 			inputStream = ReadConfig.class.getClassLoader().getResourceAsStream(
 					filePath);
-				p.load(inputStream);
+			p.load(inputStream);
 		}
 		catch(IOException e){
-			logger.error("====================¼ÓÔØ×ÊÔ´ÎÄ¼şconfig.propertiesÊ§°Ü!====================",e);
+			logger.error("====================åŠ è½½èµ„æºæ–‡ä»¶config.propertieså¤±è´¥!====================",e);
 		}finally{
 			try{
 				if(inputStream!=null){
@@ -60,13 +60,13 @@ public class  ReadConfig{
 			catch(IOException e){
 				e.printStackTrace();
 			}
-			
+
 		}
 		return p;
 	}
 	/**
-	 * ¶ÁÈ¡ÅäÖÃkeyµÄÖµ
-	 * @param key 
+	 * è¯»å–é…ç½®keyçš„å€¼
+	 * @param key
 	 * @return value
 	 */
 	public static String get(String key){

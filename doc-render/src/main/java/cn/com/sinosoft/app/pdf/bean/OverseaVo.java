@@ -3,128 +3,128 @@ package cn.com.sinosoft.app.pdf.bean;
 import cn.com.sinosoft.app.pdf.AbstractDocumentVo;
 
 /**
- * ¾³Íâ¾ÈÔ®pdfÊı¾İVO
+ * å¢ƒå¤–æ•‘æ´pdfæ•°æ®VO
  * @ClassName: OverseaVo
- * @Description: ¾³Íâ¾ÈÔ®pdfÊı¾İVO
+ * @Description: å¢ƒå¤–æ•‘æ´pdfæ•°æ®VO
  * @author lihengjun
- * ĞŞ¸ÄÊ±¼ä£º 2013Äê11ÔÂ11ÈÕ ÏÂÎç2:48:23
- * ĞŞ¸ÄÄÚÈİ£ºĞÂ½¨
+ * ä¿®æ”¹æ—¶é—´ï¼š 2013å¹´11æœˆ11æ—¥ ä¸‹åˆ2:48:23
+ * ä¿®æ”¹å†…å®¹ï¼šæ–°å»º
  */
 public class OverseaVo extends AbstractDocumentVo{
-	
+
 	/**
-	 * ±£µ¥ºÅ
+	 * ä¿å•å·
 	 */
 	private String policyNo;
 	/**
-	 * Í¶±£ÈËĞÕÃû
+	 * æŠ•ä¿äººå§“å
 	 */
 	private String holderName;
 	/**
-	 * Í¶±»±£ÈË¹ØÏµ
+	 * æŠ•è¢«ä¿äººå…³ç³»
 	 */
 	private String relation;
 	/**
-	 * Í¶±£ÈËÁªÂçµØÖ·
+	 * æŠ•ä¿äººè”ç»œåœ°å€
 	 */
 	private String holderAdress;
 	/**
-	 * Í¶±£ÈËÓÊ±à
+	 * æŠ•ä¿äººé‚®ç¼–
 	 */
 	private String holderPostCode;
-	
+
 	/**
-	 * ±»±£ÏÕÈËĞÕÃû
+	 * è¢«ä¿é™©äººå§“å
 	 */
 	private String insuredName;
 	/**
-	 * ±»±£ÏÕÈËĞÕÃûÆ´Òô
+	 * è¢«ä¿é™©äººå§“åæ‹¼éŸ³
 	 */
 	private String insuredPingyinName;
 	/**
-	 * ±»±£ÏÕÈË»¤ÕÕºÅÂë
+	 * è¢«ä¿é™©äººæŠ¤ç…§å·ç 
 	 */
 	private String insuredPassportNo;
 	/**
-	 * ±»±£ÏÕÈËĞÔ±ğ
+	 * è¢«ä¿é™©äººæ€§åˆ«
 	 */
 	private String insuredSex;
 	/**
-	 * ±»±£ÏÕÈË³öÉúÈÕÆÚ
+	 * è¢«ä¿é™©äººå‡ºç”Ÿæ—¥æœŸ
 	 */
 	private String insuredBirthday;
 	/**
-	 * ±»±£ÏÕÈËµç»°
+	 * è¢«ä¿é™©äººç”µè¯
 	 */
 	private String insuredPhone;
-	
+
 	/**
-	 * ±»±£ÏÕÈËÖ¤¼şºÅÂë
+	 * è¢«ä¿é™©äººè¯ä»¶å·ç 
 	 */
 	private String insuredIDNo;
-	
+
 	/**
-	 * Ç°Íù¹ú¼Ò»òµØÇø
+	 * å‰å¾€å›½å®¶æˆ–åœ°åŒº
 	 */
 	private String destination;
-	
+
 	/**
-	 * ÊÜÒæÈËĞÕÃû
+	 * å—ç›Šäººå§“å
 	 */
 	private String beneficiaryName;
-	
+
 	/**
-	 * ±¸×¢
+	 * å¤‡æ³¨
 	 */
 	private String remarks;
-	
+
 	/**
-	 * ±£ÏÕÆÚ¼ä
+	 * ä¿é™©æœŸé—´
 	 */
 	private String period;
-	
+
 	/**
-	 * ¾³ÍâÒâÍâÉËº¦»ò²Ğ¼²±£¶î
+	 * å¢ƒå¤–æ„å¤–ä¼¤å®³æˆ–æ®‹ç–¾ä¿é¢
 	 */
 	private String accidentalSumInsured;
-	
+
 	/**
-	 * ½ô¼±¾ÈÔ®Ò½ÁÆ±£¶î
+	 * ç´§æ€¥æ•‘æ´åŒ»ç–—ä¿é¢
 	 */
 	private String emergencySumInsured;
-	
+
 	/**
-	 * ¸½¼Ó¾³Íâ½ô¼±¾ÈÔ®Ò½±£¶î
+	 * é™„åŠ å¢ƒå¤–ç´§æ€¥æ•‘æ´åŒ»ä¿é¢
 	 */
 	private String medicalSumInsured;
-	
+
 	/**
-	 * ×Ü±£·Ñ
+	 * æ€»ä¿è´¹
 	 */
 	private String premium;
 	/**
-	 * Ç©·¢ÈÕÆÚ
+	 * ç­¾å‘æ—¥æœŸ
 	 */
 	private String issueDate;
-	
+
 	/**
-	 * Ê¡·İ
+	 * çœä»½
 	 */
 	private String branchName;
-	
+
 	/**
-	 * ºÏ×÷¹«Ë¾Ãû³Æ
+	 * åˆä½œå…¬å¸åç§°
 	 */
 	private String companyName;
-	
+
 	/**
-	 * Í¼Æ¬´æ·ÅÂ·¾¶
+	 * å›¾ç‰‡å­˜æ”¾è·¯å¾„
 	 */
 	private String imagePath;
-	
-	
-	
-	
+
+
+
+
 
 	public String getHolderName() {
 		return holderName;
@@ -319,7 +319,7 @@ public class OverseaVo extends AbstractDocumentVo{
 	public void setPolicyNo(String policyNo) {
 		this.policyNo = policyNo;
 	}
-	
+
 	public String findPrimaryKey() {
 		return this.policyNo;
 	}

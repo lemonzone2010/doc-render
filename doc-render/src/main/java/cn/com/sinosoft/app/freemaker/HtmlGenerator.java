@@ -29,7 +29,7 @@ public class HtmlGenerator {
         	StringWriter stringWriter = new StringWriter();       
         	writer = new BufferedWriter(stringWriter);  
         	
-        	tp.setEncoding("UTF-8");       
+        	tp.setEncoding("UTF-8");
         	tp.process(variables, writer);       
         	htmlContent = stringWriter.toString();     
         	writer.flush();       

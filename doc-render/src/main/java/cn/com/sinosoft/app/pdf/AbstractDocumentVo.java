@@ -1,36 +1,46 @@
 package cn.com.sinosoft.app.pdf;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 
-import cn.com.sinosoft.app.utils.JacksonBinder;
+import org.apache.commons.beanutils.BeanUtils;
+
 /**
- * Ä£°åÖĞĞèÒªµÄÊı¾İÊÓÍ¼ ³éÏóÀà
+ * æ¨¡æ¿ä¸­éœ€è¦çš„æ•°æ®è§†å›¾ æŠ½è±¡ç±»
  * @ClassName: AbstractDocumentVo
- * @Description: Ä£°åÖĞĞèÒªµÄÊı¾İÊÓÍ¼ ³éÏóÀà
+ * @Description: æ¨¡æ¿ä¸­éœ€è¦çš„æ•°æ®è§†å›¾ æŠ½è±¡ç±»
  * @author lihengjun
- * ĞŞ¸ÄÊ±¼ä£º 2013Äê11ÔÂ5ÈÕ ÏÂÎç3:22:35
- * ĞŞ¸ÄÄÚÈİ£ºĞÂ½¨
+ * ä¿®æ”¹æ—¶é—´ï¼š 2013å¹´11æœˆ5æ—¥ ä¸‹åˆ3:22:35
+ * ä¿®æ”¹å†…å®¹ï¼šæ–°å»º
  */
 public abstract class AbstractDocumentVo implements DocumentVo{
 	/**
-	 * ,Ìî³äÄ£°åÖĞÊı¾İ,»ñÈ¡Ä£°åÊı¾İmap
+	 * ,å¡«å……æ¨¡æ¿ä¸­æ•°æ®,è·å–æ¨¡æ¿æ•°æ®map
 	 * @Title: fillDataMap
-	 * @Description:  »ñÈ¡Ä£°åÊı¾İmap
+	 * @Description:  è·å–æ¨¡æ¿æ•°æ®map
 	 * @return
 	 * @author lihengjun
-	 * ĞŞ¸ÄÊ±¼ä£º 2013Äê11ÔÂ5ÈÕ ÉÏÎç11:19:29
-	 * ĞŞ¸ÄÄÚÈİ£ºĞÂ½¨
+	 * ä¿®æ”¹æ—¶é—´ï¼š 2013å¹´11æœˆ5æ—¥ ä¸Šåˆ11:19:29
+	 * ä¿®æ”¹å†…å®¹ï¼šæ–°å»º
 	 */
-	public Map<String, Object> fillDataMap(){
-		Map<String, Object> map = new HashMap<String, Object>();
-		
+	public Map fillDataMap(){
+		Map<String, String> map = new HashMap<>();
+
 		DocumentVo vo = this.getDocumentVo();
-		map = JacksonBinder.buildNonDefaultBinder().convertValue(vo, HashMap.class);
-		
+		try {
+			map = BeanUtils.describe(vo);
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+		}
+
 		return map;
 	}
-	
+
 	private DocumentVo getDocumentVo() {
 		return this;
 	}

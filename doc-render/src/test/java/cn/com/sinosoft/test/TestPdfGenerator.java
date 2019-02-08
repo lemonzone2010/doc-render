@@ -15,87 +15,87 @@ import cn.com.sinosoft.app.pdf.exception.DocumentGeneratingException;
 import cn.com.sinosoft.app.utils.ResourceLoader;
 
 public class TestPdfGenerator extends TestCase {
-	private static HtmlGenerator htmlGenerator = new HtmlGenerator();
+    private static HtmlGenerator htmlGenerator = new HtmlGenerator();
 
-	@Override
-	protected void setUp() throws Exception {
-		super.setUp();
-		String logConfigPath = ResourceLoader.getPath("log4j.properties");
-		PropertyConfigurator.configure(logConfigPath);
-	}
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+        String logConfigPath = ResourceLoader.getPath("log4j.properties");
+        PropertyConfigurator.configure(logConfigPath);
+    }
 
-	public void test(String outputFile) throws DocumentGeneratingException {
+    public void test(String outputFile) throws DocumentGeneratingException {
 
-		long start = System.currentTimeMillis();
+        long start = System.currentTimeMillis();
 
-		// Ä£°åÊý¾Ý
-		OverseaVo overseaVo = new OverseaVo();
+        // æ¨¡æ¿æ•°æ®
+        OverseaVo overseaVo = new OverseaVo();
 
-		overseaVo.setPolicyNo("1234567890123456");
-		overseaVo.setHolderName("ÀöÀöÕÅ123ÀöÀöÕÅ123");
-		overseaVo.setInsuredName("ÀöÀöÕÅ123ÀöÀöÕÅ123ÀöÀöÕÅ123ÀöÀöÕÅ123");
-		overseaVo.setBeneficiaryName("²âÊÔÊÜÒæÈËÐÕÃû");
-		overseaVo.setBranchName("±±¾©");
-		overseaVo.setCompanyName("¿ÆË÷ÎÖ¹«Ë¾");
-		overseaVo.setDestination("Ó¢¹ú,¶íÂÞË¹,±ùµº,ÈÕÄÚÍß,ÍþÄáË¹Ð¡Õò");
-		overseaVo.setHolderAdress("±±¾©ÊÐÎÝ¶¥ºó½Ö½ðÈÚ´ó½Ö14ºÅÖÐ¹úÈËÊÙ¹ã³¡xxxÔøx101ÊÒ");
-		overseaVo.setHolderPostCode("123456");
-		overseaVo.setInsuredBirthday("2013-11-10");
-		overseaVo.setInsuredIDNo("123456789012345678");
-		overseaVo.setInsuredName("°®ÐÂ¾õÂÞÆôÐÇ");
-		overseaVo.setInsuredPassportNo("²âÊÔ»¤ÕÕºÅÂë123456789");
-		overseaVo.setInsuredPhone("13112345678");
-		overseaVo.setInsuredPingyinName("aixinjuluoqixing");
-		overseaVo.setInsuredSex("Å®");
-		overseaVo.setIssueDate("2013-11-12");
-		overseaVo.setPeriod("Ê®Ò»Äê");
-		overseaVo.setPremium("1009.00");
-		overseaVo.setRelation("×ÓÅ®");
-		overseaVo.setRemarks("ÕâÊÇÒ»ÕÅ²âÊÔ±£µ¥,½öÎª²âÊÔ,Ñ§Ï°ËùÓÃ,ÇëÎð×ªÔØ");
-		overseaVo.setAccidentalSumInsured("150000");
-		overseaVo.setEmergencySumInsured("500000");
-		overseaVo.setMedicalSumInsured("220000");
-		overseaVo.setImagePath(ResourceLoader.getPath("config/images"));
+        overseaVo.setPolicyNo("1234567890123456");
+        overseaVo.setHolderName("ä¸½ä¸½å¼ 123ä¸½ä¸½å¼ 123");
+        overseaVo.setInsuredName("ä¸½ä¸½å¼ 123ä¸½ä¸½å¼ 123ä¸½ä¸½å¼ 123ä¸½ä¸½å¼ 123");
+        overseaVo.setBeneficiaryName("æµ‹è¯•å—ç›Šäººå§“å");
+        overseaVo.setBranchName("åŒ—äº¬");
+        overseaVo.setCompanyName("ç§‘ç´¢æ²ƒå…¬å¸");
+        overseaVo.setDestination("è‹±å›½,ä¿„ç½—æ–¯,å†°å²›,æ—¥å†…ç“¦,å¨å°¼æ–¯å°é•‡");
+        overseaVo.setHolderAdress("åŒ—äº¬å¸‚å±‹é¡¶åŽè¡—é‡‘èžå¤§è¡—14å·ä¸­å›½äººå¯¿å¹¿åœºxxxæ›¾x101å®¤");
+        overseaVo.setHolderPostCode("123456");
+        overseaVo.setInsuredBirthday("2013-11-10");
+        overseaVo.setInsuredIDNo("123456789012345678");
+        overseaVo.setInsuredName("çˆ±æ–°è§‰ç½—å¯æ˜Ÿ");
+        overseaVo.setInsuredPassportNo("æµ‹è¯•æŠ¤ç…§å·ç 123456789");
+        overseaVo.setInsuredPhone("13112345678");
+        overseaVo.setInsuredPingyinName("aixinjuluoqixing");
+        overseaVo.setInsuredSex("å¥³");
+        overseaVo.setIssueDate("2013-11-12");
+        overseaVo.setPeriod("åä¸€å¹´");
+        overseaVo.setPremium("1009.00");
+        overseaVo.setRelation("å­å¥³");
+        overseaVo.setRemarks("è¿™æ˜¯ä¸€å¼ æµ‹è¯•ä¿å•,ä»…ä¸ºæµ‹è¯•,å­¦ä¹ æ‰€ç”¨,è¯·å‹¿è½¬è½½");
+        overseaVo.setAccidentalSumInsured("150000");
+        overseaVo.setEmergencySumInsured("500000");
+        overseaVo.setMedicalSumInsured("220000");
+        overseaVo.setImagePath(ResourceLoader.getPath("config/images"));
 
-		// classpath ÖÐÄ£°åÂ·¾¶
-		String template = "config/templates/overseaAssistance.html";
-		// classpath Â·¾¶
-		String outputFileClass = ResourceLoader.getPath("");
-		// Éú³ÉpdfÂ·¾¶
-		outputFile = outputFile == null ? new File(outputFileClass)
-				.getParentFile().getParent()
-				+ "/tmp/"
-				+ System.currentTimeMillis() + ".pdf" : outputFile;
+        // classpath ä¸­æ¨¡æ¿è·¯å¾„
+        String template = "config/templates/overseaAssistance.html";
+        // classpath è·¯å¾„
+        String outputFileClass = ResourceLoader.getPath("");
+        // ç”Ÿæˆpdfè·¯å¾„
+        outputFile = outputFile == null ? new File(outputFileClass)
+                .getParentFile().getParent()
+                + "/tmp/"
+                + System.currentTimeMillis() + ".pdf" : outputFile;
 
-		PdfDocumentGenerator pdfGenerator = new PdfDocumentGenerator();
-		// Éú³Épdf
-		pdfGenerator.generate(template, overseaVo, outputFile);
+        PdfDocumentGenerator pdfGenerator = new PdfDocumentGenerator();
+        // ç”Ÿæˆpdf
+        pdfGenerator.generate(template, overseaVo, outputFile);
 
-		System.err.println(" \n pdfÉú³É³É¹¦  IS OK path=\n" + outputFile);
-		System.err.println("ºÄÊ±time=" + (System.currentTimeMillis() - start)
-				/ 1000);
+        System.err.println(" \n pdfç”ŸæˆæˆåŠŸ  IS OK path=\n" + outputFile);
+        System.err.println("è€—æ—¶time=" + (System.currentTimeMillis() - start)
+                / 1000);
 
-	}
+    }
 
-	@Test
-	public void testGenerate() {
-		String outputFileClass = ResourceLoader.getPath("");
-		String outputFile = new File(outputFileClass)
-		.getParentFile().getParent()
-		+ "/tmp/"
-		+ System.currentTimeMillis() + ".pdf" ;
-		try {
-			test(outputFile);
-		} catch (Exception ex) {
-			System.err.println(" \n pdfÉú³ÉÊ§°Ü");
-			ex.printStackTrace();
-		}
-		
-		File file = new File(outputFile);
-		
-		assertNotNull("Éú³ÉpdfÎÄ¼þÎª¿Õ", file);
-		assertTrue("pdfÎÄ¼þ²»´æÔÚ", file.exists());
-//		assertTrue("pdfÉú³ÉÎÄ¼þ´óÐ¡´íÎó", file.getFreeSpace()>178000);
-		
-	}
+    @Test
+    public void testGenerate() {
+        String outputFileClass = ResourceLoader.getPath("");
+        String outputFile = new File(outputFileClass)
+                .getParentFile().getParent()
+                + "/tmp/"
+                + System.currentTimeMillis() + ".pdf" ;
+        try {
+            test(outputFile);
+        } catch (Exception ex) {
+            System.err.println(" \n pdfç”Ÿæˆå¤±è´¥");
+            ex.printStackTrace();
+        }
+
+        File file = new File(outputFile);
+
+        assertNotNull("ç”Ÿæˆpdfæ–‡ä»¶ä¸ºç©º", file);
+        assertTrue("pdfæ–‡ä»¶ä¸å­˜åœ¨", file.exists());
+//		assertTrue("pdfç”Ÿæˆæ–‡ä»¶å¤§å°é”™è¯¯", file.getFreeSpace()>178000);
+
+    }
 }

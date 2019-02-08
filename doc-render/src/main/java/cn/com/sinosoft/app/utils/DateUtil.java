@@ -1,13 +1,13 @@
 /**
  * <h3>Class description</h3>
- * <h4>æ—¥æœŸå¤„ç†ç±?/h4>
+ * <h4>?/h4>
  *
  * <h4>Special Notes</h4>
- * 
+ *
  *
  * @ver 0.1
  * @author lihengjun
-* 2008-8-11
+ * 2008-8-11
  */
 package cn.com.sinosoft.app.utils;
 import java.text.ParseException;
@@ -19,31 +19,31 @@ import java.util.GregorianCalendar;
 public class DateUtil
 {
 	/**
-	 * Ò»ÌìÖĞµÄÌìÊı
+	 * ä¸€å¤©ä¸­çš„å¤©æ•°
 	 */
 	public static long millionSecondsOfDay = 86400000;
 	/**
-	 * Ò»ÌìÖĞµÄĞ¡Ê±
+	 * ä¸€å¤©ä¸­çš„å°æ—¶
 	 */
 	public static long millionSecondsOfHour = 3600000;
-	
-	/**ÈÕÆÚ¸ñÊ½**/
+
+	/**æ—¥æœŸæ ¼å¼**/
 	public static final String FORMATTER_OF_DATE = "yyyy-MM-dd";
-	/**Ê±¼ä¸ñÊ½**/
+	/**æ—¶é—´æ ¼å¼**/
 	public static final String FORMATTER_OF_TIME = "HH:mm:ss";
-	/**ÈÕÆÚÊ±¼ä¸ñÊ½**/
+	/**æ—¥æœŸæ—¶é—´æ ¼å¼**/
 	public static final String FORMATTER_OF_DATE_AND_TIME = "yyyy-MM-dd HH:mm:ss";
 	/**
-	 * ½ñÌì
-	 * @return ½ñÌìdate
+	 * ä»Šå¤©
+	 * @return ä»Šå¤©date
 	 */
 	public static Date getToday() {
 		return new Date();
-		
+
 	}
 	/**
-	 * µÃµ½Á½¸öÈÕÆÚÖ®¼äµÄÌìÊı,Á½Í·²»Ëã,È¡³öÊı¾İºó£¬¿ÉÒÔ¸ù¾İĞèÒªÔÙ¼Ó
-	 * 
+	 * å¾—åˆ°ä¸¤ä¸ªæ—¥æœŸä¹‹é—´çš„å¤©æ•°,ä¸¤å¤´ä¸ç®—,å–å‡ºæ•°æ®åï¼Œå¯ä»¥æ ¹æ®éœ€è¦å†åŠ 
+	 *
 	 * @author lihengjun
 	 * @param date1
 	 * @param date2
@@ -54,14 +54,14 @@ public class DateUtil
 		Long d1 = date1.getTime();
 		return (int) ((d2 - d1) / millionSecondsOfDay);
 	}
-	
+
 	/**
-	 * 
-	 * ¼ÆËã2¸öÊ±¼äÖ®¼äµÄÏà²îĞ¡Ê±ºÍ·ÖÖÓÊı£¬·µ»ØXXĞ¡Ê±XX·Ö
-	 * ×¢Òâdate1¸ñÊ½Îªyyyy-MM-dd
-	 * ×¢Òâdate2¸ñÊ½Îªyyyy-MM-dd
-	 * ×¢Òâtime1¸ñÊ½ÎªHH:mm
-	 * ×¢Òâtime2¸ñÊ½ÎªHH:mm
+	 *
+	 * è®¡ç®—2ä¸ªæ—¶é—´ä¹‹é—´çš„ç›¸å·®å°æ—¶å’Œåˆ†é’Ÿæ•°ï¼Œè¿”å›XXå°æ—¶XXåˆ†
+	 * æ³¨æ„date1æ ¼å¼ä¸ºyyyy-MM-dd
+	 * æ³¨æ„date2æ ¼å¼ä¸ºyyyy-MM-dd
+	 * æ³¨æ„time1æ ¼å¼ä¸ºHH:mm
+	 * æ³¨æ„time2æ ¼å¼ä¸ºHH:mm
 	 * date1<date2
 	 * @param date1
 	 * @param time1
@@ -71,17 +71,17 @@ public class DateUtil
 	 */
 	public static String getHourAndMinute(String date1,String time1, String date2,String time2) {
 		Date dateTime1_tmp = DateUtil.parse(date1+" "+time1, "yyyy-MM-dd HH:mm");
-		Date dateTime2_tmp = DateUtil.parse(date2+" "+time2, "yyyy-MM-dd HH:mm");		
+		Date dateTime2_tmp = DateUtil.parse(date2+" "+time2, "yyyy-MM-dd HH:mm");
 		Long d2 = dateTime2_tmp.getTime();
 		Long d1 = dateTime1_tmp.getTime();
 		int hours = (int) ((d2 - d1) / millionSecondsOfHour);
 		int mins = (int) ((d2 - d1) % millionSecondsOfHour);
 		mins=mins/60000;
-		return String.valueOf(hours)+"Ğ¡Ê±"+String.valueOf(mins)+"·Ö";
+		return String.valueOf(hours)+"å°æ—¶"+String.valueOf(mins)+"åˆ†";
 	}
 	/**
-	 * ¼ÆËãÈÕÆÚ¼ÓÌìÊı
-	 * 
+	 * è®¡ç®—æ—¥æœŸåŠ å¤©æ•°
+	 *
 	 * @author lihengjun
 	 * @param date
 	 * @param days
@@ -99,10 +99,10 @@ public class DateUtil
 		c.add(Calendar.MINUTE,minutes);
 		return c.getTime();
 	}
-	
+
 	/**
-	 * ¸ù¾İÖ¸¶¨ÈÕÆÚ¸ñÊ½¸ñÊ½»¯ÈÕÆÚ
-	 * 
+	 * æ ¹æ®æŒ‡å®šæ—¥æœŸæ ¼å¼æ ¼å¼åŒ–æ—¥æœŸ
+	 *
 	 * @author lihengjun
 	 * @param date
 	 * @param formater
@@ -111,14 +111,14 @@ public class DateUtil
 	public static String format(Date date, String formater){
 		if(date==null)
 			return null;
-		
+
 		SimpleDateFormat sdf = new SimpleDateFormat( formater );
 		return sdf.format(date);
 	}
-	
+
 	/**
-	 * ¸ñÊ½»¯ÈÕÆÚ
-	 * 
+	 * æ ¼å¼åŒ–æ—¥æœŸ
+	 *
 	 * @author lihengjun
 	 * @param date
 	 * @param formater
@@ -136,36 +136,36 @@ public class DateUtil
 		}
 		return result;
 	}
-	
+
 	/**
-	 * ¸ù¾İÈÕÆÚÈ¡³öÊÇĞÇÆÚ¼¸
-	 * 
+	 * æ ¹æ®æ—¥æœŸå–å‡ºæ˜¯æ˜ŸæœŸå‡ 
+	 *
 	 * @param date
 	 *            Date
-	 * @return int ·µ»Ø1-7
+	 * @return int è¿”å›1-7
 	 */
 	public static int getWeekOfDate(Date date) {
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(date);
 		return (calendar.get(Calendar.DAY_OF_WEEK) - 1) == 0 ? 7 : calendar.get(Calendar.DAY_OF_WEEK) - 1;
 	}
-	
+
 	public static String getWeekTextOfDate(Date date){
-		String dayNames[] = { "ĞÇÆÚÈÕ", "ĞÇÆÚÒ»", "ĞÇÆÚ¶ş", "ĞÇÆÚÈı", "ĞÇÆÚËÄ", "ĞÇÆÚÎå",
-	    "ĞÇÆÚÁù" };
+		String dayNames[] = { "æ˜ŸæœŸæ—¥", "æ˜ŸæœŸä¸€", "æ˜ŸæœŸäºŒ", "æ˜ŸæœŸä¸‰", "æ˜ŸæœŸå››", "æ˜ŸæœŸäº”",
+				"æ˜ŸæœŸå…­" };
 		int t=getWeekOfDate(date);
 		if(t==7) t=0;
 		return dayNames[t];
 	}
 
 	public static String getWeekTextOfDate(String strDate, String format){
-		String dayNames[] = { "ĞÇÆÚÈÕ", "ĞÇÆÚÒ»", "ĞÇÆÚ¶ş", "ĞÇÆÚÈı", "ĞÇÆÚËÄ", "ĞÇÆÚÎå",
-	    "ĞÇÆÚÁù" };
+		String dayNames[] = { "æ˜ŸæœŸæ—¥", "æ˜ŸæœŸä¸€", "æ˜ŸæœŸäºŒ", "æ˜ŸæœŸä¸‰", "æ˜ŸæœŸå››", "æ˜ŸæœŸäº”",
+				"æ˜ŸæœŸå…­" };
 		int t=getWeekOfDate( parse(strDate, format) );
 		if(t==7) t=0;
 		return dayNames[t];
 	}
-	
+
 	/**
 	 * format "yyyy-MM-dd HH:mm:ss"
 	 */
@@ -176,5 +176,5 @@ public class DateUtil
 		return formatter.format(date).trim();
 
 	}
-	
+
 }

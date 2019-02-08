@@ -13,12 +13,12 @@ import cn.com.sinosoft.app.utils.ResourceLoader;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.BaseFont;
 /**
- * ITextRenderer¶ÔÏó¹¤³§,Ìá¹©ĞÔÄÜ,¼ÓÔØÖĞÎÄ×ÖÌå¼¯(´óĞ¡20M),¹ÊÔö¼Ó¶ÔÏó³Ø
+ * ITextRendererå¯¹è±¡å·¥å‚,æä¾›æ€§èƒ½,åŠ è½½ä¸­æ–‡å­—ä½“é›†(å¤§å°20M),æ•…å¢åŠ å¯¹è±¡æ± 
  * @ClassName: ITextRendererObjectFactory
  * @Description:
  * @author lihengjun
- * ĞŞ¸ÄÊ±¼ä£º 2013Äê11ÔÂ13ÈÕ ÏÂÎç3:00:20
- * ĞŞ¸ÄÄÚÈİ£ºĞÂ½¨
+ * ä¿®æ”¹æ—¶é—´ï¼š 2013å¹´11æœˆ13æ—¥ ä¸‹åˆ3:00:20
+ * ä¿®æ”¹å†…å®¹ï¼šæ–°å»º
  */
 public class ITextRendererObjectFactory extends
 		BasePoolableObjectFactory {
@@ -30,13 +30,13 @@ public class ITextRendererObjectFactory extends
 		return renderer;
 	}
 	/**
-	 * »ñÈ¡¶ÔÏó³Ø,Ê¹ÓÃ¶ÔÏó¹¤³§ ºóÌá¹©ĞÔÄÜ,ÄÜ¹»Ö§³Ö 500Ïß³Ì µü´ú10
+	 * è·å–å¯¹è±¡æ± ,ä½¿ç”¨å¯¹è±¡å·¥å‚ åæä¾›æ€§èƒ½,èƒ½å¤Ÿæ”¯æŒ 500çº¿ç¨‹ è¿­ä»£10
 	 * @Title: getObjectPool
-	 * @Description: »ñÈ¡¶ÔÏó³Ø
+	 * @Description: è·å–å¯¹è±¡æ± 
 	 * @return GenericObjectPool
 	 * @author lihengjun
-	 * ĞŞ¸ÄÊ±¼ä£º 2013Äê11ÔÂ13ÈÕ ÏÂÎç2:15:15
-	 * ĞŞ¸ÄÄÚÈİ£ºĞÂ½¨
+	 * ä¿®æ”¹æ—¶é—´ï¼š 2013å¹´11æœˆ13æ—¥ ä¸‹åˆ2:15:15
+	 * ä¿®æ”¹å†…å®¹ï¼šæ–°å»º
 	 */
 	public static GenericObjectPool getObjectPool(){
 		synchronized (ITextRendererObjectFactory.class) {
@@ -52,19 +52,19 @@ public class ITextRendererObjectFactory extends
 				itextRendererObjectPool.setConfig(config);
 			}
 		}
-		
+
 		return itextRendererObjectPool;
 	}
 
 	/**
-	 * ³õÊ¼»¯
-	 * 
+	 * åˆå§‹åŒ–
+	 *
 	 * @Title: initTextRenderer
 	 * @Description:
 	 * @return
 	 * @throws DocumentException
 	 * @throws IOException
-	 * @author lihengjun ĞŞ¸ÄÊ±¼ä£º 2013Äê11ÔÂ13ÈÕ ÉÏÎç10:39:39 ĞŞ¸ÄÄÚÈİ£ºĞÂ½¨
+	 * @author lihengjun ä¿®æ”¹æ—¶é—´ï¼š 2013å¹´11æœˆ13æ—¥ ä¸Šåˆ10:39:39 ä¿®æ”¹å†…å®¹ï¼šæ–°å»º
 	 */
 	public static synchronized ITextRenderer createTextRenderer()
 			throws DocumentException, IOException {
@@ -75,14 +75,14 @@ public class ITextRendererObjectFactory extends
 	}
 
 	/**
-	 * Ìí¼Ó×ÖÌå
-	 * 
+	 * æ·»åŠ å­—ä½“
+	 *
 	 * @Title: addFonts
 	 * @Description:
 	 * @param fontResolver
 	 * @throws DocumentException
 	 * @throws IOException
-	 * @author lihengjun ĞŞ¸ÄÊ±¼ä£º 2013Äê11ÔÂ5ÈÕ ÏÂÎç1:37:57 ĞŞ¸ÄÄÚÈİ£ºĞÂ½¨
+	 * @author lihengjun ä¿®æ”¹æ—¶é—´ï¼š 2013å¹´11æœˆ5æ—¥ ä¸‹åˆ1:37:57 ä¿®æ”¹å†…å®¹ï¼šæ–°å»º
 	 */
 	public static ITextFontResolver addFonts(ITextFontResolver fontResolver)
 			throws DocumentException, IOException {

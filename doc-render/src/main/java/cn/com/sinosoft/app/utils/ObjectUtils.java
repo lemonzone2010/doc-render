@@ -48,10 +48,10 @@ public abstract class ObjectUtils {
 	private static final String EMPTY_ARRAY = ARRAY_START + ARRAY_END;
 	private static final String ARRAY_ELEMENT_SEPARATOR = ", ";
 	/**
-	 * ÅÐ¶ÏÊý×é¶ÔÏóÊÇ·ñÎª¿ÕÖµ , Èç¹ûÊÇ ""," ","null",null Ôò·µ»Øtrue, ¶ÔÓÚCollection.size<1Ò²¿Õ
-	 * 
+	 * åˆ¤æ–­æ•°ç»„å¯¹è±¡æ˜¯å¦ä¸ºç©ºå€¼ , å¦‚æžœæ˜¯ ""," ","null",null åˆ™è¿”å›žtrue, å¯¹äºŽCollection.size<1ä¹Ÿç©º
+	 *
 	 * @param obj
-	 *            ÐèÒªÅÐ¶ÏµÄÖµ
+	 *            éœ€è¦åˆ¤æ–­çš„å€¼
 	 * @return boolean
 	 */
 	public static boolean isBlank(Object... objArray) {
@@ -75,10 +75,10 @@ public abstract class ObjectUtils {
 	}
 
 	/**
-	 * ÅÐ¶ÏÊÇ·ñ²»Îª¿Õ, Èç¹ûÊÇ ""," ","null",null Ôò·µ»Øfalse
-	 * 
+	 * åˆ¤æ–­æ˜¯å¦ä¸ä¸ºç©º, å¦‚æžœæ˜¯ ""," ","null",null åˆ™è¿”å›žfalse
+	 *
 	 * @param obj
-	 *            ÐèÒªÅÐ¶ÏµÄÖµ
+	 *            éœ€è¦åˆ¤æ–­çš„å€¼
 	 * @return boolean
 	 */
 	public static boolean isNotBlank(Object... obj) {
@@ -86,10 +86,10 @@ public abstract class ObjectUtils {
 	}
 
 	/**
-	 * ÅÐ¶ÏÊÇ·ñÎª¿Õ, Èç¹ûÊÇ ""," ","null",null Ôò·µ»Øtrue
-	 * 
+	 * åˆ¤æ–­æ˜¯å¦ä¸ºç©º, å¦‚æžœæ˜¯ ""," ","null",null åˆ™è¿”å›žtrue
+	 *
 	 * @param obj
-	 *            ÐèÒªÅÐ¶ÏµÄÖµ
+	 *            éœ€è¦åˆ¤æ–­çš„å€¼
 	 * @return boolean
 	 */
 	public static boolean isEmpty(Object obj) {
@@ -97,10 +97,10 @@ public abstract class ObjectUtils {
 	}
 
 	/**
-	 * ÅÐ¶ÏÊÇ·ñ²»Îª¿Õ, Èç¹ûÊÇ ""," ","null",null Ôò·µ»Øfalse
-	 * 
+	 * åˆ¤æ–­æ˜¯å¦ä¸ä¸ºç©º, å¦‚æžœæ˜¯ ""," ","null",null åˆ™è¿”å›žfalse
+	 *
 	 * @param obj
-	 *            ÐèÒªÅÐ¶ÏµÄÖµ
+	 *            éœ€è¦åˆ¤æ–­çš„å€¼
 	 * @return boolean
 	 */
 	public static boolean isNotEmpty(Object obj) {
@@ -902,18 +902,18 @@ public abstract class ObjectUtils {
 		return sb.toString();
 	}
 	/**
-	 * Èç¹û¶ÔÏóÎª¿Õ¾ÍÐÂ½¨Ò»¸ö¶ÔÏó
+	 * å¦‚æžœå¯¹è±¡ä¸ºç©ºå°±æ–°å»ºä¸€ä¸ªå¯¹è±¡
 	 * @Title: newInstance
-	 * @Description: 
-	 * @param obj ¶ÔÏó
-	 * @param clazz ¶ÔÏóµÄÀà
+	 * @Description:
+	 * @param obj å¯¹è±¡
+	 * @param clazz å¯¹è±¡çš„ç±»
 	 * @return
 	 * @author lihengjun
-	 * ÐÞ¸ÄÊ±¼ä£º 2013Äê11ÔÂ15ÈÕ ÏÂÎç2:37:41
-	 * ÐÞ¸ÄÄÚÈÝ£ºÐÂ½¨
+	 * ä¿®æ”¹æ—¶é—´ï¼š 2013å¹´11æœˆ15æ—¥ ä¸‹åˆ2:37:41
+	 * ä¿®æ”¹å†…å®¹ï¼šæ–°å»º
 	 */
 	public static <T> T newInstance(T obj,Class<T> clazz){
-		
+
 		if(obj==null){
 			try {
 				obj = clazz.newInstance();
@@ -926,9 +926,9 @@ public abstract class ObjectUtils {
 		}
 
 		return obj;
-		
-		
-		
-	} 
+
+
+
+	}
 
 }
