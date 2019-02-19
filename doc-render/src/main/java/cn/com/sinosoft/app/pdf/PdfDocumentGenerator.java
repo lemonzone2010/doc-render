@@ -1,23 +1,20 @@
 package cn.com.sinosoft.app.pdf;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
+import cn.com.sinosoft.app.freemaker.HtmlGenerator;
+import cn.com.sinosoft.app.pdf.exception.DocumentGeneratingException;
+import cn.com.sinosoft.app.pdf.factory.ITextRendererObjectFactory;
 import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
-import cn.com.sinosoft.app.freemaker.HtmlGenerator;
-import cn.com.sinosoft.app.pdf.DocumentVo;
-import cn.com.sinosoft.app.pdf.exception.DocumentGeneratingException;
-import cn.com.sinosoft.app.pdf.factory.ITextRendererObjectFactory;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.Map;
 
 /**
  * pdf 生成
@@ -50,11 +47,11 @@ public class PdfDocumentGenerator {
 	 */
 	public boolean generate(String template, DocumentVo documentVo,
 							String outputFile) throws DocumentGeneratingException {
-		Map<String, Object> variables = new HashMap<String, Object>();
+		Map<String, Object> variables;
 
 		try {
 			variables = documentVo.fillDataMap();
-			String htmlContent = this.htmlGenerator.generate(template,
+			String htmlContent = htmlGenerator.generate(template,
 					variables);
 			this.generate(htmlContent, outputFile);
 
@@ -90,7 +87,7 @@ public class PdfDocumentGenerator {
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance()
 					.newDocumentBuilder();
 			Document doc = builder.parse(new ByteArrayInputStream(htmlContent
-					.getBytes("utf-8")));
+					.getBytes(StandardCharsets.UTF_8)));
 			File f = new File(outputFile);
 			if (f != null && !f.getParentFile().exists()) {
 				f.getParentFile().mkdir();
@@ -114,8 +111,9 @@ public class PdfDocumentGenerator {
 		} catch (Exception e) {
 			throw e;
 		} finally {
-			if (out != null)
-				out.close();
+			if (out != null) {
+                out.close();
+            }
 
 			if (iTextRenderer != null) {
 				try {

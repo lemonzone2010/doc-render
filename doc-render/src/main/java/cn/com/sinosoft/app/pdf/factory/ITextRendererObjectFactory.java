@@ -22,7 +22,7 @@ import com.itextpdf.text.pdf.BaseFont;
  */
 public class ITextRendererObjectFactory extends
 		BasePoolableObjectFactory {
-	private static GenericObjectPool itextRendererObjectPool = null;
+	private final static GenericObjectPool itextRendererObjectPool = init();
 
 	@Override
 	public Object makeObject() throws Exception {
@@ -39,20 +39,19 @@ public class ITextRendererObjectFactory extends
 	 * 修改内容：新建
 	 */
 	public static GenericObjectPool getObjectPool(){
-		synchronized (ITextRendererObjectFactory.class) {
-			if(itextRendererObjectPool==null){
-				itextRendererObjectPool = new GenericObjectPool(
-						new ITextRendererObjectFactory());
-				GenericObjectPool.Config config = new GenericObjectPool.Config();
-				config.lifo = false;
-				config.maxActive = 15;
-				config.maxIdle = 5;
-				config.minIdle = 1;
-				config.maxWait = 5 * 1000;
-				itextRendererObjectPool.setConfig(config);
-			}
-		}
+		return itextRendererObjectPool;
+	}
 
+	private static GenericObjectPool init() {
+		GenericObjectPool itextRendererObjectPool = new GenericObjectPool(
+				new ITextRendererObjectFactory());
+		GenericObjectPool.Config config = new GenericObjectPool.Config();
+		config.lifo = false;
+		config.maxActive = 15;
+		config.maxIdle = 5;
+		config.minIdle = 1;
+		config.maxWait = 5 * 1000;
+		itextRendererObjectPool.setConfig(config);
 		return itextRendererObjectPool;
 	}
 
