@@ -6,6 +6,8 @@ import java.io.File;
 import junit.framework.TestCase;
 
 import org.apache.log4j.PropertyConfigurator;
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import cn.com.sinosoft.app.freemaker.HtmlGenerator;
@@ -14,16 +16,39 @@ import cn.com.sinosoft.app.pdf.bean.OverseaVo;
 import cn.com.sinosoft.app.pdf.exception.DocumentGeneratingException;
 import cn.com.sinosoft.app.utils.ResourceLoader;
 
-public class TestPdfGenerator extends TestCase {
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+public class TestPdfGenerator {
     private static HtmlGenerator htmlGenerator = new HtmlGenerator();
 
-    @Override
-    protected void setUp() throws Exception {
-        super.setUp();
+    @Before
+    public void setUp() throws Exception {
         String logConfigPath = ResourceLoader.getPath("log4j.properties");
         PropertyConfigurator.configure(logConfigPath);
     }
 
+    @Test
+    public void testGenerate() {
+        String outputFileClass = ResourceLoader.getPath("");
+        String outputFile = new File(outputFileClass)
+                .getParentFile().getParent()
+                + "/tmp/"
+                + System.currentTimeMillis() + ".pdf" ;
+        try {
+            test(outputFile);
+        } catch (Exception ex) {
+            System.err.println(" \n pdf生成失败");
+            ex.printStackTrace();
+        }
+
+        File file = new File(outputFile);
+
+        assertNotNull("生成pdf文件为空", file);
+        assertTrue("pdf文件不存在", file.exists());
+//		assertTrue("pdf生成文件大小错误", file.getFreeSpace()>178000);
+
+    }
     public void test(String outputFile) throws DocumentGeneratingException {
 
         long start = System.currentTimeMillis();
@@ -77,25 +102,5 @@ public class TestPdfGenerator extends TestCase {
 
     }
 
-    @Test
-    public void testGenerate() {
-        String outputFileClass = ResourceLoader.getPath("");
-        String outputFile = new File(outputFileClass)
-                .getParentFile().getParent()
-                + "/tmp/"
-                + System.currentTimeMillis() + ".pdf" ;
-        try {
-            test(outputFile);
-        } catch (Exception ex) {
-            System.err.println(" \n pdf生成失败");
-            ex.printStackTrace();
-        }
 
-        File file = new File(outputFile);
-
-        assertNotNull("生成pdf文件为空", file);
-        assertTrue("pdf文件不存在", file.exists());
-//		assertTrue("pdf生成文件大小错误", file.getFreeSpace()>178000);
-
-    }
 }

@@ -1,6 +1,8 @@
 
 ## 项目背景
-项目主页:http://git.oschina.net/lemonzone2010/doc-render
+项目主页: 
+- [github](https://github.com/lemonzone2010/doc-render)
+- [gitee](http://git.oschina.net/lemonzone2010/doc-render)
 
 公司需要生成PDF，会有一个固定样式格式，然后添加动态数据。于是就有了一个想法：编写模板->填充数据->生成pdf。
 
