@@ -30,14 +30,16 @@ FreeMarker是一个模版引擎，一个基于文本的模板输出工具（生�
 
     c.html模板文档css字体设置: font-family: Arial Unicode MS;
 
-1. 能够加载图片,设置的默认图片路径 classpath:config/images/
+2. 能够加载图片,设置的默认图片路径 classpath:config/images/
 
-1. 运行Junit测试类 TestPdfGenerator.testGenerate() 即可生成pdf,pdf生成路径见日志(doc-render/tmp/).
+3. 运行Junit测试类 TestPdfGenerator.testGenerate() 即可生成pdf,pdf生成路径见日志(doc-render/tmp/).
 
-1. 由于生成pdf需要加载中文字体文件(一般字体文件>10M),本例中增加了资源池(最大资源数15),相关详细见ITextRendererObjectFactory.getObjectPool();经过简单测试能够支持:150个用户迭代10次
+4. 由于生成pdf需要加载中文字体文件(一般字体文件>10M),本例中增加了资源池(最大资源数15),相关详细见ITextRendererObjectFactory.getObjectPool();经过简单测试能够支持:150个用户迭代10次
 
-1. 模板html:[点击查看](doc-render/src/test/resources/config/templates/overseaAssistance.html)
+5. 模板html:[点击查看](doc-render/src/test/resources/config/templates/overseaAssistance.html)
 
-1. pdf生成文件[点击查看](doc-render/tmp/1549647421978.pdf)
+6. pdf生成文件[点击查看](doc-render/tmp/1549647421978.pdf)，预览如下图：
+![](doc-render/tmp/1549647421978-1.jpg)
+![](doc-render/tmp/1549647421978-2.jpg)
 
 
